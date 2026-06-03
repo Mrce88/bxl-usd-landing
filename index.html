@@ -60,6 +60,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opa
 section{padding:74px 0;border-top:1px solid rgba(242,235,218,.08)}
 .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:16px}
 .h2{font-family:var(--serif);font-weight:400;font-size:clamp(28px,4.4vw,46px);line-height:1.08;color:var(--cream);max-width:20ch}
+.lead b{color:var(--cream);font-weight:600}
 .lead{color:var(--muted);font-size:clamp(15px,1.8vw,18px);max-width:60ch;margin-top:18px}
 
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:46px}
@@ -91,9 +92,6 @@ footer{padding:48px 0 60px;border-top:1px solid rgba(242,235,218,.08);text-align
 .socials a:hover{color:var(--gold)}
 .legal{font-size:12px;color:#6E8377;max-width:52ch;margin:14px auto 0;line-height:1.5}
 
-.reveal-img{display:block;margin:38px auto 0;width:min(620px,92%);height:auto;border-radius:18px;border:1px solid rgba(231,198,103,.25);box-shadow:0 24px 70px rgba(0,0,0,.45)}
-.formwrap{margin:34px auto 0;max-width:540px;width:100%;border-radius:16px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.4)}
-.formwrap iframe{width:100%;display:block;background:transparent}
 a.btn{text-decoration:none}
 .ladder{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:44px;align-items:stretch}
 @media(max-width:760px){.ladder{grid-template-columns:1fr}}
@@ -115,15 +113,21 @@ a.btn{text-decoration:none}
 .freeform input:focus{border-color:var(--gold)}
 .freeform input::placeholder{color:#7E9387}
 .microrgpd{font-size:11.5px;color:#6E8377;margin-top:10px;line-height:1.45}
+.faq{max-width:760px;margin:42px auto 0}
+.faq details{border:1px solid rgba(231,198,103,.18);border-radius:14px;background:var(--panel);margin-bottom:12px;overflow:hidden}
+.faq details[open]{border-color:rgba(231,198,103,.42)}
+.faq summary{list-style:none;cursor:pointer;padding:20px 24px;font-family:var(--serif);font-size:19px;color:var(--cream);display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--body);font-weight:700;font-size:24px;color:var(--gold);transition:transform .2s;flex:0 0 auto;line-height:1}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq .ans{padding:0 24px 22px;color:var(--muted);font-size:15px;line-height:1.65}
+.faq .ans b{color:var(--cream)}
 .rv{opacity:0;transform:translateY(22px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
 .d1{animation-delay:.05s}.d2{animation-delay:.18s}.d3{animation-delay:.32s}.d4{animation-delay:.46s}.d5{animation-delay:.6s}
 @keyframes rise{to{opacity:1;transform:none}}
 @media(max-width:680px){.grid{grid-template-columns:1fr}.founders{padding:38px 24px}section{padding:56px 0}}
 @media(prefers-reduced-motion:reduce){.rv,.ticker-track,.dot{animation:none;opacity:1;transform:none}}
 
-.showcase{padding:34px 0 6px}
-.showcase img{width:100%;max-width:780px;display:block;margin:0 auto;border-radius:18px;border:1px solid rgba(231,198,103,.18);box-shadow:0 22px 60px rgba(0,0,0,.4)}
-.showcase .cap{text-align:center;font-family:var(--mono);font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--camel);margin-top:16px}
 </style>
 </head>
 <body>
@@ -178,9 +182,11 @@ a.btn{text-decoration:none}
 
 <section>
   <div class="wrap">
-    <div class="eyebrow rv">Le concept</div>
-    <h2 class="h2 rv">Pas un café avec du wifi. Ton QG entre deux trades.</h2>
-    <p class="lead rv">Tu connais la sensation : tu veux bosser tes positions au calme, croiser des gens qui parlent ta langue, et un vrai bon café entre deux bougies. Ce lieu n'existait pas à Bruxelles. Construit par un trader, pour la communauté finance &amp; crypto — BXL/USD réunit le café, le coworking et les marchés sous un même toit.</p>
+    <div class="eyebrow rv">L'histoire</div>
+    <h2 class="h2 rv">Né d'une frustration : ce lieu n'existait pas.</h2>
+    <p class="lead rv">Trader, tu connais la sensation : vouloir bosser tes positions au calme, croiser des gens qui parlent ta langue, et un vrai bon café entre deux bougies. À Bruxelles, cet endroit n'existait nulle part. Alors, plutôt que d'attendre, on le construit.</p>
+    <p class="lead rv">BXL/USD, c'est le <b>premier café-coworking de Bruxelles pensé pour la communauté finance, forex &amp; crypto</b>. Le café, le coworking et les marchés réunis sous un même toit. Pas un café avec du wifi — ton QG entre deux trades.</p>
+    <p class="lead rv">Bruxelles, ce n'est que le port d'attache. Le réseau /USD a vocation à essaimer : <b>PAR/USD, NYC/USD, LDN/USD…</b> Bruxelles d'abord, l'Europe ensuite — le marché ne ferme jamais, et il ne connaît pas les frontières.</p>
   </div>
 </section>
 
@@ -241,6 +247,20 @@ a.btn{text-decoration:none}
         <div class="microrgpd">En t'inscrivant, tu acceptes de recevoir nos emails. Désinscription en un clic, zéro spam.</div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow rv" style="text-align:center">Questions fréquentes</div>
+    <h2 class="h2 rv" style="margin:0 auto;text-align:center">Tout ce que tu te demandes.</h2>
+    <div class="faq">
+      <details class="rv"><summary>C'est quoi exactement BXL/USD ?</summary><div class="ans">Le premier café-coworking pensé pour la communauté finance &amp; crypto à Bruxelles. Un café de spécialité, un espace pour bosser tes positions au calme, et une communauté qui parle ta langue — le tout sous un même toit.</div></details>
+      <details class="rv"><summary>Ça ouvre quand et où ?</summary><div class="ans">À Bruxelles, courant 2026. L'emplacement exact se finalise — inscris-toi sur la liste pour être prévenu·e en premier dès qu'on l'annonce.</div></details>
+      <details class="rv"><summary>S'inscrire à la liste, c'est payant ?</summary><div class="ans">Non, la waitlist est <b>100 % gratuite et sans engagement</b>. Désinscription en un clic à tout moment. Si tu veux aller plus loin, l'option Membre Fondateur (1€ symbolique) débloque des avantages à vie.</div></details>
+      <details class="rv"><summary>C'est quoi un Membre Fondateur ?</summary><div class="ans">Les 100 premiers à soutenir le projet via une contribution symbolique. En échange : <b>premier mois de café offert, tarif fondateur bloqué à vie, accès prioritaire, carte numérotée et ton nom sur le mur</b>. Une fois les portes ouvertes, ces avantages ne reviendront plus.</div></details>
+      <details class="rv"><summary>L'Academy, ce sont des signaux de trading ?</summary><div class="ans"><b>Non.</b> L'Academy, c'est de l'éducation aux marchés : littératie financière, gestion du risque, psychologie. Aucun signal, aucun conseil en investissement, aucune promesse de gains. Du savoir, pas de la hype.</div></details>
     </div>
   </div>
 </section>
